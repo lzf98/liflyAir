@@ -1,9 +1,10 @@
 ---
-title: "程序员的副业之路"
-date: "2025-08-02"
-tags: ["副业", "程序员", "赚钱"]
+title: "测试文章能否正常显示"
+date: "2025-08-03"
+summary: "测试显示问题"
+tags: ["测试"]
 draft: false
-summary: "这是我第一篇记录副业实践的文章。"
+authors: ["default"]
 ---
 
 妞儿壁纸
