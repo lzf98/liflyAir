@@ -1,0 +1,69 @@
+---
+title: "Godaddy域名和RFCHOST服务器搭建Hexo博客"
+date: "2025-08-17"
+tags: ["网站建设"]
+draft: false
+summary: "售卖域名的网站有很多，比如国内知名的腾讯云，阿里云，百度云等等。"
+---
+
+
+### Godaddy域名购买
+域名是网站的身份证，要想有一个与众不同的网站，首先要租赁一个域名，根据自己的预算选择域名。一般像个人博客来说，选择性价比较高的域名最好，毕竟个人博客不用太高的要求。
+> 售卖域名的网站有很多，比如国内知名的腾讯云，阿里云，百度云等等。
+
+- 为什么要买国外的域名呢？
+主要是为了省去网站备案的麻烦，网站备案下来估计要十几天，而且流程很繁琐。
+
+下面说一说域名购买流程，对于老手来讲流程其实很简单，或许还会有更好的途径，但对于没用过的网友来说为了少走弯路还是要找几篇教程来看看。
+首先找到购买域名的网站[GoDaddy](https://sg.godaddy.com/zh)
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271757581.png)
+
+用邮箱注册一个账号，注册完成以后登录。
+在域名查询搜索框内输入你要租赁的域名
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271757690.png)
+在列表中可以看到有很多价格的域名，个人推荐后缀为com或者cn的。不同的后缀价格也不同。Godaddy的第一年比较便宜，最低的块钱就可以租到，但第二年价格就没有优惠了，优惠必须最少要租赁两年。我的域名就是两年一百三十六块，第一年二十块。
+找到合适的域名以后添加到购物车，点击购物车去结算，可以用支付宝或银联支付。
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271757853.png)
+有促销码的可以输入促销码，有几块钱的优惠，复制促销码点击应用即可生效
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271757761.png)
+
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271757337.png)
+付款即可
+
+购买完成以后需要去你的邮箱确认购买，然后等待服务商确认。
+
+购买成功以后，找到域名管理，
+
+
+### 服务器
+比较常用的服务上有vultur，搬瓦工，Hostwinds，IoZoom，RFchost等等。如果实在找不到合适的服务器，可以看一下[vpn大佬](https://vpsdalao.com/),这里有很多推荐的服务器，实时监控服务器的库存和价格，确实很实用。
+下面就以RFchost的服务器为例，简单说一下流程。
+- 跟购买域名一样，首先需要注册一个账号。
+- 选择合适的服务器，使用微信或支付宝支付
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271757078.png)
+以下情况如实填写，填写按以后，选择支付方式，支付成功，然后去邮箱查看服务商的确认购买邮件，点击链接，完成验证。
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271758464.png)
+然后等待服务商将服务器IP和密码发给你，购买完成以后使用xshell连接服务器。
+打开xshell，名称自定义，主机填邮箱中发的IP地址，点击连接，用户名为root选择记住，复制粘贴服务器，密码选择不记住。
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271758320.png)
+连接成功以后第一件事就是修改Linux的配置文件，可以看看这篇文章
+[linux的安全与配置](http://www.lzfweb.com/2019/06/06/linux%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE%E4%B8%8E%E9%85%8D%E7%BD%AE/)
+处理好服务器以后，接下来需要在本地电脑搭建Hexo博客。
+
+### Hexo博客搭建
+> Hexo有原版的和别人已经做好样式的，如果不想自己去修改样式那些配置，可以引用其他博主的模板，这样也比较省事
+
+- 在搭建Hexo之前需要做一些准备工作，也就是准备一些工具，Git，Node.js,npm,。
+
+### 安装Git
+安装git的中文文档可以参考官网教程：[Git官网](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)。
+> Windows 如何安装Git？
+
+1.点击链接地址：[Git下载地址](https://git-scm.com/download/win),找到符合电脑系统和版本的链接，例如64位就点64位的链接地址就开始下载了。
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271758256.png)
+2.下载完成之后，直接运行安装，下一步即可，选择好你要安装的目录,详细安装步骤请参考[Windows10下安装Git](https://blog.csdn.net/qq_32786873/article/details/80570783)
+3.安装完成以后，右击即可看到 Git Bash here，使用git --version命令即可查看版本信息。
+![](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202108271758075.png)
+
+
+---
