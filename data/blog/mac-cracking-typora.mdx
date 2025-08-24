@@ -1,0 +1,51 @@
+---
+title: 'MAC 激活Typora'
+date: '2025-08-24'
+summary: 'MAC 激活Typora'
+tags: ['Typora']
+draft: false
+authors: ['default']
+---
+
+
+
+### 1、官网下载安装包安装
+
+官网链接：https://typora.io/
+
+
+
+![image-20250824103058783](https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202508241031869.png)
+
+
+
+安装步骤非常简单，不用详细介绍，打开安装好的Typora可以看到，并未激活
+
+<img src="https://markdownimage-1257263724.cos.ap-chengdu.myqcloud.com/typroa/202508241035981.png" alt="image-20250824103530949" style="zoom: 50%;" />
+
+
+
+## 2、激活步骤
+
+
+
+打开应用程序然后用编辑器打开以下路径：
+
+```bash
+/Applications/Typora.app/Contents/Resources/TypeMark/page-dist/static/js/LicenseIndex.180dd4c7.5b0f7af9.chunk.js
+```
+
+然后找到以下判断
+
+```bash
+hasActivated="true"==e.hasAgtivated
+```
+
+修改为以下内容
+
+```bash
+hasActivated="true"=="true"
+```
+
+然后重启就可以看到激活了
+
