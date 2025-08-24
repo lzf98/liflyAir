@@ -1,4 +1,4 @@
-import Script from 'next/script'   // ✅ 新增
+import Script from 'next/script'
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
@@ -98,11 +98,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/*在这里加 Google AdSense 验证脚本*/}
         <Script
-          id="adsense-script"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7311674354568913"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
+            id="adsense-script"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7311674354568913"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
         />
       </head>
       <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
