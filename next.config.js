@@ -104,10 +104,10 @@ module.exports = () => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // ⬅ 忽略 ESLint 报错
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // ⬅ 忽略 TS 报错（如果有的话）
   },
 }
 
