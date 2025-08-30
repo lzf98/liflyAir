@@ -126,7 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 data-ad-format="auto">
               </ins>
               <Script id="adsense-inline-script">
-                {(window.adsbygoogle=window.adsbygoogle||[]).push({})}
+                {(window.adsbygoogle = window.adsbygoogle || []).push({})}
               </Script>
             </SearchProvider>
             <Footer />
