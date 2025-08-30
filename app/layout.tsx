@@ -13,6 +13,13 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import Script from 'next/script' // 引入 Script
 
+// 声明 global 类型，告诉 TypeScript `adsbygoogle` 是一个数组
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
@@ -118,7 +125,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                    data-ad-slot="1234567890"
                    data-ad-format="auto"></ins>
               <Script>
-                {(adsbygoogle = window.adsbygoogle || []).push({})}
+                {(window.adsbygoogle = window.adsbygoogle || []).push({})}
               </Script>
             </SearchProvider>
             <Footer />
