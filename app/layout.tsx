@@ -14,10 +14,9 @@ import { Metadata } from 'next'
 import Script from 'next/script' // 引入 Script
 
 // 声明 global 类型，告诉 TypeScript `adsbygoogle` 是一个数组
-// 修改
 declare global {
   interface Window {
-    adsbygoogle: any[];
+    adsbygoogle: Array<any>;
   }
 }
 
@@ -71,69 +70,72 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const basePath = process.env.BASE_PATH || ''
 
   return (
-    <html
-      lang={siteMetadata.language}
-      className={`${space_grotesk.variable} scroll-smooth`}
-      suppressHydrationWarning
-    >
+      <html
+          lang={siteMetadata.language}
+          className={`${space_grotesk.variable} scroll-smooth`}
+          suppressHydrationWarning
+      >
+      <head>
+        {/* Google AdSense 脚本 */}
+        <Script
+            id="adsense-script"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7311674354568913"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+        />
+      </head>
       <link
-        rel="apple-touch-icon"
-        sizes="76x76"
-        href={`${basePath}/static/favicons/apple-touch-icon.png`}
+          rel="apple-touch-icon"
+          sizes="76x76"
+          href={`${basePath}/static/favicons/apple-touch-icon.png`}
       />
       <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href={`${basePath}/static/favicons/favicon-32x32.png`}
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={`${basePath}/static/favicons/favicon-32x32.png`}
       />
       <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href={`${basePath}/static/favicons/favicon-16x16.png`}
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={`${basePath}/static/favicons/favicon-16x16.png`}
       />
       <link rel="manifest" href={`${basePath}/static/favicons/site.webmanifest`} />
       <link
-        rel="mask-icon"
-        href={`${basePath}/static/favicons/safari-pinned-tab.svg`}
-        color="#5bbad5"
+          rel="mask-icon"
+          href={`${basePath}/static/favicons/safari-pinned-tab.svg`}
+          color="#5bbad5"
       />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-      <head>
-        <Script
-          id="adsense-script"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7311674354568913"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
-        <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
-          <SectionContainer>
-            <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-              <Header />
-              <main className="mb-auto">{children}</main>
-              {/* Google AdSense 广告位 */}
-              <ins
+      <ThemeProviders>
+        <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+        <SectionContainer>
+          <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+            <Header />
+            <main className="mb-auto">{children}</main>
+
+            {/* Google AdSense 广告位 */}
+            <ins
                 className="adsbygoogle my-8 mx-auto"
                 style={{ display: 'block' }}
                 data-ad-client="ca-pub-7311674354568913"
                 data-ad-slot="1234567890"
-                data-ad-format="auto"></ins>
-              <Script>
-                {(window.adsbygoogle = window.adsbygoogle || []).push({})}
-              </Script>
-            </SearchProvider>
-            <Footer />
-          </SectionContainer>
-        </ThemeProviders>
+                data-ad-format="auto"
+            ></ins>
+            <Script id="adsense-inline-script">
+              {(window.adsbygoogle = window.adsbygoogle || []).push({})}
+            </Script>
+          </SearchProvider>
+          <Footer />
+        </SectionContainer>
+      </ThemeProviders>
       </body>
-    </html>
+      </html>
   )
 }
