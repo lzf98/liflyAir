@@ -119,12 +119,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Header />
               <main className="mb-auto">{children}</main>
               <ins
-                className="adsbygoogle my-8 mx-auto"
+                className="adsbygoogle mx-auto my-8"
                 style={{ display: 'block' }}
                 data-ad-client="ca-pub-7311674354568913"
                 data-ad-slot="1234567890"
-                data-ad-format="auto">
-              </ins>
+                data-ad-format="auto"
+              ></ins>
               <Script id="adsense-inline-script">
                 {(window.adsbygoogle = window.adsbygoogle || []).push({})}
               </Script>
