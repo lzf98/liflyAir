@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
-import Script from 'next/script'  // 引入 Script
+import Script from 'next/script' // 引入 Script
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
