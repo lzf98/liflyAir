@@ -71,7 +71,6 @@ module.exports = () => {
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
-      ignoreDuringBuilds: true, // ✅ 这里加
     },
     images: {
       remotePatterns: [
@@ -100,15 +99,3 @@ module.exports = () => {
     },
   })
 }
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true, // ⬅ 忽略 ESLint 报错
-  },
-  typescript: {
-    ignoreBuildErrors: true, // ⬅ 忽略 TS 报错（如果有的话）
-  },
-}
-
-module.exports = nextConfig
