@@ -17,9 +17,10 @@ import Script from 'next/script' // 引入 Script
 // 修改
 declare global{
   interface Window{
-    adsbygoogle: any[];
+    adsbygoogle: any[],
   }
 }
+
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
