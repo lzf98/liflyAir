@@ -17,7 +17,7 @@ import Script from 'next/script' // 引入 Script
 // 修改
 declare global{
   interface Window{
-    adsbygoogle: any[],
+    adsbygoogle: unknown[]; //避免any
   }
 }
 
@@ -119,16 +119,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
               <Header />
               <main className="mb-auto">{children}</main>
-              <ins
-                className="adsbygoogle mx-auto my-8"
+              <ins className="adsbygoogle mx-auto my-8"
                 style={{ display: 'block' }}
                 data-ad-client="ca-pub-7311674354568913"
                 data-ad-slot="1234567890"
-                data-ad-format="auto"
-              ></ins>
-              <Script id="adsense-inline-script">
-                {(window.adsbygoogle = window.adsbygoogle || []).push({})}
-              </Script>
+                data-ad-format="auto">
+              </ins>
+              <Script
+                id="adsense-inline-script"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                  __html: `(window.adsbygoogle = window.adsbygoogle || []).push({});`,
+                }}
+              />
             </SearchProvider>
             <Footer />
           </SectionContainer>
