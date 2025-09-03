@@ -13,14 +13,6 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import Script from 'next/script' // 引入 Script
 
-// 声明 global 类型，告诉 TypeScript `adsbygoogle` 是一个数组
-// 修改
-declare global{
-  interface Window{
-    adsbygoogle: unknown[]; //避免any
-  }
-}
-
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
