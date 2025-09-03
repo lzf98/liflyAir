@@ -119,19 +119,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
               <Header />
               <main className="mb-auto">{children}</main>
-              <ins className="adsbygoogle mx-auto my-8"
-                style={{ display: 'block' }}
-                data-ad-client="ca-pub-7311674354568913"
-                data-ad-slot="1234567890"
-                data-ad-format="auto">
-              </ins>
-              <Script
-                id="adsense-inline-script"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                  __html: `(window.adsbygoogle = window.adsbygoogle || []).push({});`,
-                }}
-              />
             </SearchProvider>
             <Footer />
           </SectionContainer>
