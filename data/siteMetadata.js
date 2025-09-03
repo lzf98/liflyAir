@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: '正在飞行',
-  author: '超级马里奥',
+  author: '飞行猿',
   headerTitle: '山海',
   description: 'Life is a journey full of challenges',
   language: 'en-us',
