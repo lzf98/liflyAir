@@ -2,8 +2,8 @@
 const siteMetadata = {
   title: '正在飞行',
   author: '飞行猿',
-  headerTitle: '山海',
-  description: 'Life is a journey full of challenges',
+  headerTitle: '飞行家',
+  description: '星宝剑锋从磨砺出，梅花香自苦寒来。',
   language: 'en-us',
   theme: 'light', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
